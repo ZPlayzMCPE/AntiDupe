@@ -79,4 +79,3 @@ class Main extends PB implements LT{
 		}
 	}
 }
-?>
