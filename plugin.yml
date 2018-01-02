@@ -1,0 +1,5 @@
+﻿name: Reparaçao
+version: 4.0
+api: 2.0.0
+main: AntiDupe\Main
+author: DevPedro_
