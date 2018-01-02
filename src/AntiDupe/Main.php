@@ -37,7 +37,7 @@ class Main extends PB implements LT{
 			
 				$p->sendPopup("§cPut an item in your hand");
 				
-				return;
+				return true;
 				
 			}
 			
@@ -46,13 +46,13 @@ class Main extends PB implements LT{
 				
 				if($p->getXpLevel() < 30){
 					$p->sendPopup("§cInsufficient Xp.");
-					return;
+					return true;
 				}
 				
 				if($i->getDamage() == 0){
 				
 					$p->sendPopup("§cThis item is already repaired.");
-					return;
+					return true;
 				}
 				
 				$p->setXpLevel($p->getXpLevel() -30);
@@ -61,21 +61,21 @@ class Main extends PB implements LT{
 				$p->getLevel()->addSound(new AnvilUseSound($p));
 				$p->sendMessage("§cItem successfully repaired.");
 				$p->sendPopup("§cItem successfully repaired.");
-				return;
+				return true;
 			}
 			
 			$p->sendPopup("§cThis item is not repairable."); 
-			return;
+			return true;
 		}
 		
 		if($tile instanceof Hopper){
 			$e->setCancelled(true);
-			return;
+			return true;
 		}
 		
 		if($i->getId() == 410){
 			$e->setCancelled(true);
-			return;
+			return true;
 		}
 	}
 }
